@@ -14,13 +14,14 @@ let btn3 = document.getElementById("btn3");
 let btns = [btn1, btn2, btn3]
 
 function clickOnItem(button) {
-	if (tg.MainButton.isVisible) {
+	if (tg.MainButton.isVisible && item == button.id) {
 		tg.MainButton.hide();
 	}
 	else {
 		tg.MainButton.setText("Перейти в корзину");
 		item = button.id;
 		console.log("Button ID:", item);
+		tg.sendData(item);
 		tg.MainButton.show();
 	}
 }
