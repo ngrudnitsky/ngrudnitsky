@@ -1,13 +1,9 @@
-body {
+/* body {
 	margin: 0;
 	padding: 0;
 	font-size: 18px;
 	color: var(--tg-theme-text-color);
 	background: var(--tg-theme-bg-color);
-}
-
-.container {
-	max-width: 390px;
 }
 
 .inner {
@@ -44,19 +40,67 @@ body {
 
 .usercard {
 	text-align: center;
-}
+} */
 
 
 
 
+/* ========================================= */
 
+.container {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #1b1b1b;
+  }
+  
+  .plan-card {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 200px 200px 200px;
 
+	background-color: #2b2b2b;
+	border-radius: 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	padding: 24px;
+	margin: 16px;
+	width: 300px;
+	display: flex;
+	align-items: center;
+  }
+  
+  .plan-icon {
+	margin-right: 16px;
+  }
+  
+  .plan-icon img {
+	width: 150px;
+	border-radius: 10px;
+  }
+  
+  .plan-info {
+	flex-grow: 1;
+  }
+  
+  .plan-name {
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 8px;
+  }
+  
+  .plan-price {
+	color: #fff;
+	font-size: 24px;
+	font-weight: 700;
+  }
 
-
-
-
-
-
-
-
-
+  
