@@ -13,6 +13,7 @@ let btn3 = document.getElementById("btn3");
 
 let btns = [btn1, btn2, btn3]
 
+
 function clickOnItem(button) {
 	if (tg.MainButton.isVisible && item == button.id) {
 		tg.MainButton.hide();
@@ -26,10 +27,11 @@ function clickOnItem(button) {
 	}
 }
 
-btns.forEach(btn => btn.addEventListener("click", function(){clickOnItem(this)}))
+btns.forEach(btn => btn.addEventListener("click", function () { clickOnItem(this) }))
 
 
-Telegram.WebApp.onEvent("mainButtonClicked", function(){
+Telegram.WebApp.onEvent("mainButtonClicked", function () {
+	
 	tg.sendData(item);
 });
 
