@@ -11,45 +11,26 @@ let btn1 = document.getElementById("btn1");
 let btn2 = document.getElementById("btn2");
 let btn3 = document.getElementById("btn3");
 
-btn1.addEventListener("click", function(){
-	console.log("TEST")
-	// if (tg.MainButton.isVisible) {
-	// 	tg.MainButton.hide();
-	// }
-	// else {
-	// 	tg.MainButton.setText("Вы выбрали товар 1!");
-	// 	item = "1";
-	// 	tg.MainButton.show();
-	// }
-});
+let btns = [btn1, btn2, btn3]
 
-btn2.addEventListener("click", function(){
+function clickOnItem(button) {
 	if (tg.MainButton.isVisible) {
 		tg.MainButton.hide();
 	}
 	else {
-		tg.MainButton.setText("Вы выбрали товар 2!");
-		item = "2";
+		tg.MainButton.setText("Перейти в корзину");
+		item = button.id;
+		console.log("Button ID:", item);
 		tg.MainButton.show();
 	}
-});
+}
 
-btn3.addEventListener("click", function(){
-	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
-	}
-	else {
-		tg.MainButton.setText("Вы выбрали товар 3!");
-		item = "3";
-		tg.MainButton.show();
-	}
-});
+btns.forEach(btn => btn.addEventListener("click", function(){clickOnItem(this)}))
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
 	tg.sendData(item);
 });
-
 
 let usercard = document.getElementById("usercard");
 
